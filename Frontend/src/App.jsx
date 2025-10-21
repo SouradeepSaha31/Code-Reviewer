@@ -62,7 +62,7 @@ function App() {
           <Markdown
             rehypePlugins={rehypeHighlight}
           >
-            {loading ? "Finding the best answer for you...🧐🔎🌐" : review}
+            {loading ? "Finding the best answer for you...🧐🔎🌐" : review || "no information"}
             
           </Markdown>
         </div>
