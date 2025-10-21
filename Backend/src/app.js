@@ -5,7 +5,7 @@ import cors from "cors"
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://code-reviewer-frontend-6ijj.onrender.com",
     credentials : true
 }))
 
