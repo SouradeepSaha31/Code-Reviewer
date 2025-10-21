@@ -24,7 +24,11 @@ function App() {
           setLoading(true)
           console.log("first")
           let response = await axios.post("/ai/code-review/get-prompt", {code})
-          setReview(response.data.review)
+          if (!response.data.review){
+            setReview("no information")
+          } else {
+            setReview(response.data.review)
+          }
           setLoading(false)
         }
       } else {
@@ -62,7 +66,7 @@ function App() {
           <Markdown
             rehypePlugins={rehypeHighlight}
           >
-            {loading ? "Finding the best answer for you...🧐🔎🌐" : review || "no information"}
+            {loading ? "Finding the best answer for you...🧐🔎🌐" : review}
             
           </Markdown>
         </div>
