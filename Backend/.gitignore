@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.DS_Store
+coverage/
+build/
+dist/
+tmp/
+*.log
+*.sqlite
+*.sqlite-journal
+pids/
+*.pid
+*.sock
+.vscode/
+.idea/
