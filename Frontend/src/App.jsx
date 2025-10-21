@@ -23,7 +23,7 @@ function App() {
           setReview("")
           setLoading(true)
           console.log("first")
-          let response = await axios.post("/ai/code-review/get-prompt", {code})
+          let response = await axios.post("https://code-reviewer-backend-fdo9.onrender.com/ai/code-review/get-prompt", {code})
           if (!response.data.review){
             setReview("no information")
           } else {
