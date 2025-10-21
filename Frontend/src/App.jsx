@@ -27,6 +27,7 @@ function App() {
           if (!response.data.review){
             setReview("no information")
           } else {
+            console.log(response.data.review)
             setReview(response.data.review)
           }
           setLoading(false)
