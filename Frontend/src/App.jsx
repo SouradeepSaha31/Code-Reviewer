@@ -12,22 +12,22 @@ import { FaArrowRight } from "react-icons/fa";
 
 
 function App() {
-  let [code, setCode] = useState("")
+  let [code, setCode] = useState("Write your code here.")
   let [review, setReview] = useState("")
   let [loading, setLoading] = useState(false)
 
   const sendPrompt = async () => {
     try {
-      if(code){
+      if(code && code != "Write your code here."){
         if (!loading){
           setReview("")
           setLoading(true)
-          console.log("first")
+          // console.log("first")
           let response = await axios.post("https://code-reviewer-backend-fdo9.onrender.com/ai/code-review/get-prompt", {code})
           if (!response.data.review){
             setReview("no information")
           } else {
-            console.log(response.data.review)
+            // console.log(response.data.review)
             setReview(response.data.review)
           }
           setLoading(false)
@@ -44,8 +44,12 @@ function App() {
   return (
     <>
       <main>
+        <header>
+          <u>Code Reviewer.</u>
+        </header>
+        <footer>
         <div id="left">
-          <div className="write_code">
+          <div className="write_code" onClick={() => setCode("")}>
             <Editor
               value={code}         
               onValueChange={(newCode) => setCode(newCode)} 
@@ -71,6 +75,7 @@ function App() {
             
           </Markdown>
         </div>
+        </footer>
       </main>
     </>
   )
